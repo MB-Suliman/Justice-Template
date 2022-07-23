@@ -278,10 +278,12 @@ header > div:last-of-type .burger {
     z-index: 2;
 }
 .landing h2 {
-    font-size: 35px;
+    font-size: 30px;
     margin: 0px;
     color: #fff;
     padding: 40px;
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
 }
 @media (max-width: 767px) {
     .landing h2 {
@@ -341,3 +343,76 @@ header > div:last-of-type .burger {
     left: 0px;
 }
 /* End Landing */
+/* Start About Section */
+section.about {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    padding-top: 100px;
+    padding-bottom: 100px;
+    position: relative;
+}
+@media (max-width:767px) {
+    section.about {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, 1fr);
+        padding-top: 100px;
+        padding-bottom: 100px;
+    }
+}
+.about::after {
+    content: "25 years experience";
+    text-transform: capitalize;
+    width: 275px;
+    color: var(--third-color);
+    position: absolute;
+    background: rgba(255, 255, 255, 0.937);
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -125px);
+    text-align: center;
+    font-size: 25px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: 600;
+    letter-spacing: 2px;
+}
+.about .col-1 {
+    overflow: hidden;
+    height: 350px;
+}
+.about .col-1 img {
+    max-width: 100%;
+}
+.about .col-2 {
+    padding-left: 40px;
+    text-transform: capitalize;
+}
+@media (max-width: 767px) {
+    .about .col-2 {
+        padding: 10px var(--mainPadding);
+        text-align: center;
+    }
+}
+.about .col-2 h2 {
+    text-transform: uppercase;
+    font-size: 25px;
+    margin-top: 75px;
+    letter-spacing: 2.5px;
+    padding-top: 30px;
+}
+@media (max-width: 767px) {
+    .about .col-2 h2 {
+        margin-top: 0px;
+    }
+}
+.about .col-2 p {
+    font-size: 45px;
+    font-weight: 700;
+    margin-top: 10px;
+}
+@media (max-width:767px) {
+    .about .col-2 p {
+        font-size: 35px;
+    }
+}
+/* End About Section */
