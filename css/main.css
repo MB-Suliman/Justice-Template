@@ -1,0 +1,343 @@
+/* Start Font Family */
+@font-face {
+font-family: 'Roboto', sans-serif;
+    src: url('../webfonts/Roboto-Bold.ttf') format(".ttf");
+    src: url('../webfonts/Roboto-Light.ttf') format(".ttf");
+    src: url('../webfonts/Roboto-Medium.ttf') format(".ttf");
+}
+@font-face {
+font-family: 'Montserrat', sans-serif;
+    src: url('../webfonts/Montserrat-VariableFont_wght.ttf') format(".ttf");
+}
+/* End Font Family */
+/* Start Variables */
+:root {
+    --mainPadding: 20px;
+    --main-color: #b49c73;
+    --secondary-color: #383741;
+    --third-color: #a78a5a;
+    --forth-color: #121215;
+}
+/* End Variables */
+/* Start Global Rules */
+* {
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+html {
+    scroll-behavior: smooth;
+}
+body {
+    font-family: 'Roboto', sans-serif;
+}
+/* End Global Rules */
+/* Start Media Screen */
+.container {
+    padding: 0 15px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: var(--mainPadding);
+    padding-right: var(--mainPadding);
+}
+ /* Small */
+@media (min-width: 768px) {
+    .container {
+        width: 750px;
+    }
+}
+/* Medium */
+@media (min-width: 992px) {
+    .container {
+        width: 970px;
+    }
+}
+/* Large */
+@media (min-width: 1200px) {
+    .container {
+        width: 1170px;
+    }
+}
+/* End Media Screen */
+/* Start Header */
+header {
+    display: flex;
+    width: 100%;
+    height: 105px;
+}
+header .logo {
+    flex-basis: 285px;
+    padding-left: var(--mainPadding);
+    background-color: var(--secondary-color);
+}
+@media (max-width:991px) {
+    header .logo {
+        background-color: #fff;
+    }
+}
+@media (max-width:374px) {
+    header .logo {
+        flex-basis: 200px;
+    }
+}
+header .logo h1 {
+    margin: 0px;
+    color: var(--main-color);
+    font-size: 50px;
+    font-family: 'montserrat', sans-serif;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 10px;
+    text-align: center;
+    text-transform: uppercase;
+}
+@media (max-width:374px) {
+    header .logo h1 {
+        font-size: 30px;
+        padding: 0px;
+    }
+}
+header > div:last-of-type  {
+    flex: 1;
+    position: relative;
+}
+@media (max-width:991px) {
+    header > div:last-of-type div:not(.burger) {
+        display: none;
+    }
+}
+header > div:last-of-type > div:first-of-type {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #ddd;
+}
+header > div:last-of-type > div:first-of-type .info div:first-of-type,
+header > div:last-of-type > div:first-of-type .info div:last-of-type {
+    display: inline-block;
+    padding: 0px var(--mainPadding);
+}
+header > div:last-of-type > div:first-of-type .info i {
+    color: var(--main-color);
+}
+header > div:last-of-type > div:first-of-type .info div p {
+    display: inline-block;
+    padding-left: 10px;
+}
+header > div:last-of-type > div:first-of-type .social {
+    flex-basis: 200px;
+    padding-right: var(--mainPadding);
+    text-align: center;
+}
+header > div:last-of-type > div:first-of-type .social a {
+    border: 1px solid var(--main-color);
+    padding: 5px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+header > div:last-of-type > div:first-of-type .social a:hover {
+    border-color: var(--secondary-color);
+}
+header > div:last-of-type > div:first-of-type .social i {
+    color: var(--main-color);
+    padding: 0px 2px;
+    font-weight: 600;
+}
+header > div:last-of-type > div:first-of-type .social a:hover i{
+    color: var(--secondary-color);
+}
+header > div:last-of-type .nav-bar {
+    width: 100%;
+}
+
+header > div:last-of-type nav {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 5px;
+}
+header > div:last-of-type nav ul {
+    margin: 0px;
+    padding: 0px;
+    display: flex;
+    list-style-type: none;
+    gap: 0px;
+    width: 78%;
+    justify-content: space-around;
+}
+header > div:last-of-type nav ul li{
+    padding: 10px 6px;
+}
+header > div:last-of-type nav ul li:hover {
+    border-bottom: 2px solid var(--main-color);
+    cursor: pointer;
+}
+header > div:last-of-type nav a{
+    text-decoration: none;
+    font-size: 22px;
+    font-weight: 500;
+    text-transform: capitalize;
+    color: var(--forth-color);
+}
+header > div:last-of-type nav ul li:hover > a {
+    color: var(--main-color);
+}
+header > div:last-of-type .nav-bar nav > div:last-of-type{
+    margin-right: 22px;
+    flex-basis: 170px;
+    padding: 11px;
+    text-align: center;
+    background-color: var(--main-color);
+    border-radius: 5px;
+}
+header > div:last-of-type .nav-bar nav > div:last-of-type:hover {
+    box-shadow: inset 0 0 8px 1px;
+    background-color: var(--third-color);
+}
+header > div:last-of-type .nav-bar nav > div:last-of-type:hover a {
+    color: #fff;
+}
+header > div:last-of-type .burger {
+    display: none;
+}
+@media (max-width:991px) {
+    header > div:last-of-type .burger {
+        display: block;
+        position: absolute;
+        border: 2px solid #000;
+        padding: 10px 12px;
+        right: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        -webkit-transform: translateY(-50%);
+        -moz-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+        -o-transform: translateY(-50%);
+        border-radius: 5px;
+        cursor: pointer;
+        z-index: 3;
+    }
+}
+@media (max-width:991px) {
+    header > div:last-of-type .burger:hover {
+        border-color: var(--main-color);
+    }
+    header > div:last-of-type .burger:hover  i {
+        color: var(--main-color);
+    }
+    header > div:last-of-type .burger nav {
+        display: none;
+        width: 100%;
+        justify-content: space-around;
+        padding: 0px;
+    }
+    header > div:last-of-type .burger:hover > nav {
+        display: flex;
+        position: absolute;
+        width: 100vw;
+        right: -12px;
+        background-color: var(--main-color);
+        height: 130px;
+        bottom: -133px;
+        align-items: center;
+    }
+    header > div:last-of-type nav ul {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-wrap: wrap;
+        list-style-type: none;
+        margin: 0px;
+        padding: 0px;
+        width: 100%;
+    }
+    header > div:last-of-type nav ul li:hover > a {
+        color: #fff;
+    }
+}
+/* End Header */
+/* Start Landing */
+.landing {
+    background-image: url(../images/carousel-1.jpg);
+    background-size: cover;
+    height: calc(100vh - 105px);
+    position: relative;
+}
+.landing::before {
+    content: "";
+}
+.landing::after {
+    content: "";
+}
+.landing .container {
+    text-align: center;
+    text-transform: capitalize;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+}
+.landing h2 {
+    font-size: 35px;
+    margin: 0px;
+    color: #fff;
+    padding: 40px;
+}
+@media (max-width: 767px) {
+    .landing h2 {
+        font-size: 20px;
+        padding: 25px;
+    }
+}
+.landing p {
+    margin: 0px;
+    color: #fff;
+    padding: 50px 75px;
+    font-size: 75px;
+    font-weight: 600;
+}
+@media (max-width: 767px) {
+    .landing p {
+        padding: 30px 20px;
+        font-size: 40px;
+    }
+}
+.landing .button{
+    width: 200px;
+    margin: 0 auto;
+    padding: 20px 20px;
+    background-color: var(--main-color);
+    font-weight: 800;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    -ms-transition: 0.3s;
+    -o-transition: 0.3s;
+}
+.landing .button:hover {
+    box-shadow: inset 0 0 8px 1px;
+    background-color: var(--third-color);
+}
+.landing .button a {
+    color: var(--forth-color);
+    text-decoration: none;
+    transition: 0.3s;
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    -ms-transition: 0.3s;
+    -o-transition: 0.3s;
+}
+.landing .button:hover a {
+    color: #fff;
+}
+.landing .overley{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.59);
+    top: 0px;
+    left: 0px;
+}
+/* End Landing */
