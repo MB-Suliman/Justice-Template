@@ -64,6 +64,10 @@ header {
     display: flex;
     width: 100%;
     height: 105px;
+    position: sticky;
+    top: 0px;
+    z-index: 10;
+    background-color: #fff;
 }
 header .logo {
     flex-basis: 285px;
@@ -155,6 +159,7 @@ header > div:last-of-type nav {
     display: flex;
     justify-content: space-between;
     padding-top: 5px;
+    align-items: flex-start;
 }
 header > div:last-of-type nav ul {
     margin: 0px;
@@ -169,7 +174,7 @@ header > div:last-of-type nav ul li{
     padding: 10px 6px;
 }
 header > div:last-of-type nav ul li:hover {
-    border-bottom: 2px solid var(--main-color);
+    border-bottom: 4px solid var(--main-color);
     cursor: pointer;
 }
 header > div:last-of-type nav a{
@@ -185,7 +190,7 @@ header > div:last-of-type nav ul li:hover > a {
 header > div:last-of-type .nav-bar nav > div:last-of-type{
     margin-right: 22px;
     flex-basis: 170px;
-    padding: 11px;
+    padding: 10px;
     text-align: center;
     background-color: var(--main-color);
     border-radius: 5px;
@@ -193,6 +198,7 @@ header > div:last-of-type .nav-bar nav > div:last-of-type{
 header > div:last-of-type .nav-bar nav > div:last-of-type:hover {
     box-shadow: inset 0 0 8px 1px;
     background-color: var(--third-color);
+    cursor: pointer;
 }
 header > div:last-of-type .nav-bar nav > div:last-of-type:hover a {
     color: #fff;
@@ -233,13 +239,13 @@ header > div:last-of-type .burger {
     }
     header > div:last-of-type .burger:hover > nav {
         display: flex;
-        position: absolute;
         width: 100vw;
         right: -12px;
         background-color: var(--main-color);
         height: 130px;
         bottom: -133px;
         align-items: center;
+        position: fixed;
     }
     header > div:last-of-type nav ul {
         display: flex;
@@ -307,24 +313,25 @@ header > div:last-of-type .burger {
 .landing .button{
     width: 200px;
     margin: 0 auto;
-    padding: 20px 20px;
     background-color: var(--main-color);
     font-weight: 800;
     border-radius: 5px;
-    cursor: pointer;
-    transition: 0.3s;
-    -webkit-transition: 0.3s;
-    -moz-transition: 0.3s;
-    -ms-transition: 0.3s;
-    -o-transition: 0.3s;
+    transition: 250ms;
+    -webkit-transition: 250ms;
+    -moz-transition: 250ms;
+    -ms-transition: 250ms;
+    -o-transition: 250ms;
+    display: flex;
 }
 .landing .button:hover {
     box-shadow: inset 0 0 8px 1px;
     background-color: var(--third-color);
 }
 .landing .button a {
-    color: var(--forth-color);
+    width: 100%;
     text-decoration: none;
+    color: var(--forth-color);
+    padding: 20px;
     transition: 0.3s;
     -webkit-transition: 0.3s;
     -moz-transition: 0.3s;
@@ -348,8 +355,9 @@ section.about {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
     padding-top: 100px;
-    padding-bottom: 100px;
+    padding-bottom: 50px;
     position: relative;
+    align-items: end;
 }
 @media (max-width:767px) {
     section.about {
@@ -397,10 +405,10 @@ section.about {
 }
 .about .col-2 {
     padding-left: 40px;
-    padding-top: 80px;
+    padding-top: 85px;
     text-transform: capitalize;
 }
-@media (max-width: 767px) {
+@media (max-width: 991px) {
     .about .col-2 {
         padding: 10px var(--mainPadding);
         text-align: center;
@@ -408,9 +416,8 @@ section.about {
 }
 .about .col-2 h2 {
     text-transform: uppercase;
-    font-size: 20px;
-    letter-spacing: 0.5px;
-    padding-top: 30px;
+    font-size: 18px;
+    letter-spacing: 2.5px;
 }
 @media (max-width: 767px) {
     .about .col-2 h2 {
@@ -418,10 +425,10 @@ section.about {
     }
 }
 .about .col-2 p:first-of-type {
-    font-size: 35px;
+    font-size: 36px;
     font-weight: 700;
-    margin-top: 10px;
-    margin-bottom: 10px;
+    margin-top: 15px;
+    margin-bottom: 15px;
 }
 @media (max-width:767px) {
     .about .col-2 p:first-of-type {
@@ -430,11 +437,11 @@ section.about {
 }
 .about .col-2 p:last-of-type {
     margin: 0px;
-    padding: 10px 50px 10px 0px;
+    padding: 15px 75px 15px 0px;
     font-weight: 300;
     font-size: 18px;
 }
-@media (max-width:767px) {
+@media (max-width:991px) {
     .about .col-2 p:last-of-type {
         padding: 10px 0px;
     }
@@ -447,11 +454,744 @@ section.about {
     text-align: center;
     background-color: var(--main-color);
     border-radius: 5px;
+    cursor: pointer;
+}
+.about .col-2 div:hover {
+    background-color: var(--third-color);
 }
 .about .col-2 div a {
+    color: var(--forth-color);
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 600;
+}
+.about .col-2 div:hover a{
+    color: #fff;
+}
+/* End About Section */
+/* Start Practice Section */
+.practice {
+    display: flex;
+    padding-top: 75px;
+    padding-bottom: 75px;
+    text-transform: capitalize;
+}
+@media (max-width: 767px) {
+    .practice {
+        flex-direction: column;
+        height: 100vh;
+        padding-top: 25px;
+        padding-bottom: 50px;
+        gap: 50px;
+    }
+}
+/* Start Practice col-1 */
+.practice .col-1{
+    flex-basis: 225px;
+    padding-right: 30px;
+}
+@media (max-width: 767px) {
+    .practice .col-1 {
+        width: 100%;
+        max-width: 100%;
+        padding: 0px;
+        text-align: center;
+    }
+}
+@media (max-width: 767px) {
+    .practice .col-2 div.row-2 .card div {
+        width: 70px;
+        height: 70px;
+    }
+}
+.practice .col-1::before{
+    content: "our practice";
+    text-transform: uppercase;
+    font-size: 18px;
+    letter-spacing: 1.5px;
+    font-weight: bold;
+}
+.practice .col-1 h2{
+    font-size: 36px;
+    font-weight: 700;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.practice .col-1 p{
+    font-size: 17px;
+    font-weight: 300;
+    line-height: 1.6;
+}
+.practice .col-1 > div{
+    max-width: 175px;
+    margin: 10px auto 10px 0;
+    padding: 15px;
+    text-align: center;
+    background-color: var(--main-color);
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    cursor: pointer;
+}
+@media (max-width: 767px) {
+    .practice .col-1 > div{
+        margin-left: auto;
+    }
+}
+.practice .col-1 div:hover {
+    background-color: var(--third-color);
+}
+.practice .col-1 > div a{
     color: initial;
     text-decoration: none;
     font-size: 20px;
     font-weight: 600;
 }
-/* End About Section */
+.practice .col-1 div:hover a{
+    color: #fff;
+}
+/* End Practice col-1 */
+/* Start Practice col-2 */
+.practice .col-2 {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+.practice .col-2 div.row-1 {
+    background-color: var(--third-color);
+    width: 100%;
+    height: 50%;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    position: relative;
+}
+.practice .col-2 div.row-1::before,
+.practice .col-2 div.row-1::after {
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    position: absolute;
+    top: 40%;
+    width: 35px;
+    height: 35px;
+    font-size: 25px;
+    background-color: var(--secondary-color);
+    transform: translateY(-50%);
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    color: var(--third-color);
+    cursor: pointer;
+}
+.practice .col-2 div.row-1::before {
+    content: "\f104";
+    left: 43%;
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+}
+.practice .col-2 div.row-1::after {
+    content: "\f105";
+    right: 43%;
+    transform: translateX(50%);
+    -webkit-transform: translateX(50%);
+    -moz-transform: translateX(50%);
+    -ms-transform: translateX(50%);
+    -o-transform: translateX(50%);
+}
+@media (max-width: 767px) {
+    .practice .col-2 div.row-1::before,
+    .practice .col-2 div.row-1::after{
+    top: 30%;
+    width: 30px;
+    height: 30px;
+    font-size: 22px;
+    }
+}
+.practice .col-2 div.row-2 {
+    display: flex;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-90px);
+    gap: 15px;
+    justify-content: center;
+}
+@media (max-width: 767px) {
+    .practice .col-2 div.row-2 {
+        width: 100%;
+        transform: translateY(-80px);
+        justify-content: space-evenly;
+    }
+}
+.practice .col-2 div.row-2 .card{
+    background-color: #fff;
+    padding: 25px 0px 25px;
+    max-width: 30%;
+    text-align: center;
+    border-radius: 5px;
+}
+@media (max-width: 767px) {
+    .practice .col-2 div.row-2 .card {
+        width: 30%;
+        border: 1px solid #ddd;
+    }
+}
+.practice .col-2 div.row-2 .card div {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    background-color: var(--secondary-color);
+    display: grid;
+    align-items: center;
+    margin: auto;
+}
+@media (max-width: 767px) {
+    .practice .col-2 div.row-2 .card div {
+        width: 50px;
+        height: 50px;
+    }
+}
+.practice .col-2 div.row-2 .card div i{
+    font-size: 40px;
+    color: var(--third-color);
+}
+@media (max-width: 767px) {
+    .practice .col-2 div.row-2 .card div i{
+        font-size: 25px;
+    }
+}
+.practice .col-2 div.row-2 .card h3{
+    margin: 0px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+@media (max-width: 767px) {
+    .practice .col-2 div.row-2 .card h3{
+        font-size: 15px;
+    }
+}
+.practice .col-2 div.row-2 .card p{
+    margin: 0px;
+    font-size: 16px;
+    font-weight: 300;
+}
+@media (max-width: 767px) {
+    .practice .col-2 div.row-2 .card p{
+        display: none;
+    }
+}
+/* End Practice col-2 */
+/* End Practice Section */
+/* Start Appointment Section */
+.appointment {
+    /* padding: 75px 0px;
+    height: 100vh; */
+    padding: 40px 0px;
+    height: 100vh;
+}
+.appointment .container {
+    background-image: url(../images/carousel-1.jpg);
+    background-size: cover;
+    position: relative;
+    height: 100%;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    overflow: hidden;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    padding: 5px;
+}
+.appointment .container::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.59);
+    top: 0px;
+    left: 0px;
+
+}
+.appointment .form-container {
+    position: relative;
+    z-index: 2;
+    max-width: 400px;
+    min-height: 400px;
+    background-color: rgb(51 51 57 / 75%);
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    border-radius: 5px;
+    text-transform: capitalize;
+}
+.appointment .form-container h2 {
+    font-size: 36px;
+    font-weight: 700;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    color: rgb(255, 255, 255);
+    text-align: center;
+}
+.appointment form {
+    display: flex;
+    gap: 20px 20px;
+    flex-wrap: wrap;
+
+}
+.appointment form *:not(select){
+    height: 45px;
+    width: 100%;
+    background-color: #fff;
+    border-radius: 5px;
+    outline: none;
+    padding: 0px 10px;
+    text-transform: inherit;
+}
+.appointment form input[type="date"],
+.appointment form input[type="time"] {
+    width: 47%;
+    -webkit-text-fill-color: #757575;
+}
+@media (max-width:767px) {
+    .appointment form input[type="date"],
+    .appointment form input[type="time"] {
+        width: 100%;
+}
+}
+.appointment form fieldset{
+    padding: 0px;
+    border: none;
+}
+.appointment form select {
+    width: 100%;
+    height: 100%;
+    color: #757575;
+    border: none;
+    border-radius: 5px;
+    padding: 0px 10px;
+    text-transform: inherit;
+}
+.appointment form select:focus {
+    outline: none;
+}
+.appointment form input[type="submit"]{
+    font-weight: 600;
+    background-color: var(--third-color);
+    font-size: 18px;
+    border: none;
+    cursor: pointer;
+}
+/* End Appointment Section */
+/* Start features section */
+.features {
+    height: fit-content;
+    padding: 100px 10px 50px;
+}
+.features .container {
+    display: flex;
+    padding: 0px 0px;
+    min-height: 550px;
+}
+.features .container > div:first-child {
+    background-image: url(../images/feature.jpg);
+    background-size: cover;
+    width: 40%;
+    border-radius: 5px;
+}
+@media (max-width: 767px) {
+    .features .container > div:first-child {
+        display: none;
+    }
+}
+.features .list {
+    position: relative;
+    flex: 1;
+}
+@media (max-width: 767px) {
+    .features .list {
+        background: url(../images/feature.jpg);
+        border-radius: 5px;
+        height: initial;
+    }
+}
+.features .list > div {
+    position: absolute;
+    transform: translate(-100px, -50%);
+    -webkit-transform: translate(-100px, -50%);
+    -moz-transform: translate(-100px, -50%);
+    -ms-transform: translate(-100px, -50%);
+    -o-transform: translate(-100px, -50%);
+    top: 50%;
+    padding: 40px 15px 40px 55px;
+    border-radius: 5px;
+    background-color: #fff;
+    text-transform: capitalize;
+}
+@media (max-width: 767px) {
+    .features .list > div {
+        position: relative;
+        transform: translate(-50% ,-50%);
+        -webkit-transform: translate(-50% ,-50%);
+        -moz-transform: translate(-50% ,-50%);
+        -ms-transform: translate(-50% ,-50%);
+        -o-transform: translate(-50% ,-50%);
+        width: 90%;
+        left: 50%;
+        top: 50%;
+        padding: 40px 20px 40px 20px;
+}
+}
+.features .list > div::before {
+    content: "our features";
+    text-transform: uppercase;
+    font-size: 18px;
+    letter-spacing: 1.5px;
+    font-weight: 500;
+}
+.features .list > div h2 {
+    font-size: 40px;
+    font-weight: 700;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.features .list > div > div {
+    padding-left: 60px;
+    counter-increment: features-count;
+    position: relative;
+}
+.features .list > div > div::before {
+    content: counter(features-count);
+    position: absolute;
+    left: 0px;
+    top: 0%;
+    width: 45px;
+    height: 45px;
+    text-align: center;
+    border-radius: 50%;
+    line-height: 45px;
+    font-size: 18px;
+    font-weight: 600;
+    background-color: var(--third-color);
+}
+.features .list > div > div h3{
+    margin-bottom: 5px;
+}
+.features .list > div > div p{
+    margin: 0px;
+    padding: 5px 0px;
+}
+/* End features section */
+/* Start Call Section  */
+.contact {
+    height: 100vh;
+    padding: 100px 0px;
+}
+.contact .container {
+    background-image: url(../images/carousel-2.jpg);
+    height: 100%;
+    background-size: cover;
+    position: relative;
+}
+.contact .container::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.59);
+    top: 0px;
+    left: 0px;
+}
+.contact .container > div {
+    position: relative;
+    top: 50%;
+    margin: auto;
+    max-width: 500px;
+    text-align: center;
+    transform: translatey(-50%);
+}
+.contact .container h2 {
+    margin: 0px;
+    font-size: 36px;
+    padding-bottom: 25px;
+    color: #fff;
+}
+.contact .container > div div {
+    display: flex;
+    width: 175px;
+    margin: auto;
+    background-color: var(--third-color);
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+.contact .container > div div a {
+    width: 100%;
+    color: initial;
+    text-decoration: none;
+    font-size: 22px;
+    font-weight: 600;
+    padding: 15px;
+    text-transform: capitalize;
+}
+
+/* End Call Section */
+/* Start Attorneys Section */
+.attorneys {
+    padding-top: 75px;
+    padding-bottom: 200px;
+    height: fit-content;
+    text-align: center;
+    text-transform: capitalize;
+}
+.attorneys::before {
+    content: "our attorneys";
+    text-transform: uppercase;
+    font-size: 18px;
+    letter-spacing: 1.5px;
+    font-weight: 500;
+}
+.attorneys h2 {
+    font-size: 36px;
+    font-weight: 700;
+    padding-top: 20px;
+    padding-bottom: 30px;
+    margin: 0px;
+}
+.attorneys .col {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    position: relative;
+}
+.attorneys .col div.row-1 {
+    width: 100%;
+    height: 250px;
+    background-color: var(--third-color);
+    border-radius: 5px;
+}
+.attorneys .col div.row-1::before,
+.attorneys .col div.row-1::after {
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    position: absolute;
+    top: 25%;
+    width: 35px;
+    height: 35px;
+    font-size: 25px;
+    background-color: var(--secondary-color);
+    transform: translateY(-50%);
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    color: var(--third-color);
+    cursor: pointer;
+}
+.attorneys .col div.row-1::before {
+    content: "\f104";
+    left: 40%;
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+}
+.attorneys .col div.row-1::after {
+    content: "\f105";
+    right: 40%;
+    transform: translateX(50%);
+    -webkit-transform: translateX(50%);
+    -moz-transform: translateX(50%);
+    -ms-transform: translateX(50%);
+    -o-transform: translateX(50%);
+}
+@media (max-width: 767px) {
+    .attorneys .col div.row-1::before,
+    .attorneys .col div.row-1::after{
+    }
+}
+.attorneys .col div.row-2 {
+    display: flex;
+    justify-content: space-around;
+    position: absolute;
+    top: 180px;
+    height: 265px;
+    overflow: hidden;
+}
+@media (max-width: 767px) {
+    .attorneys .col div.row-2 {
+    }
+}
+.attorneys .col div.row-2 .card{
+    width: 21%;
+    background-color: #fff;
+    border-radius: 5px;
+    text-align: center;
+    max-height: 100%;
+    overflow: hidden;
+}
+@media (max-width: 767px) {
+    .attorneys .col div.row-2 .card {
+        width: 32%;
+    }
+    .attorneys .col div.row-2 .card:last-child {
+    display: none;
+    }
+}
+.attorneys .col div.row-2 .card div {
+}
+@media (max-width: 767px) {
+    .attorneys .col div.row-2 .card div {
+    }
+}
+.attorneys .col div.row-2 .card div img{
+    max-width: 100%;
+}
+.attorneys .col div.row-2 .card h3{
+    margin: 0px;
+    padding: 10px;
+}
+@media (max-width: 767px) {
+    .attorneys .col div.row-2 .card h3{
+        padding: 12px 0px;
+        font-size: 16px;
+    }
+}
+.attorneys .col div.row-2 .card p{
+    margin: 0px;
+    padding: 5px;
+}
+@media (max-width: 767px) {
+    .attorneys .col div.row-2 .card p{
+        padding: 5px 0px;
+    }
+}
+/* End Attorneys Section */
+/* Start Testimonial Section */
+.testimonial {
+    padding-top: 200px;
+    padding-bottom: 150px;
+    height: fit-content;
+    text-align: center;
+    text-transform: capitalize;
+}
+.testimonial::before {
+    content: "Testimonial";
+    text-transform: uppercase;
+    font-size: 18px;
+    letter-spacing: 1.5px;
+    font-weight: 500;
+}
+.testimonial h2 {
+    font-size: 36px;
+    font-weight: 700;
+    padding-top: 20px;
+    padding-bottom: 30px;
+    margin: 0px;
+}
+.testimonial > div:first-of-type {
+    display: flex;
+    justify-content: center;
+    padding: 30px;
+}
+.testimonial > div:first-of-type span{
+    width: 20px;
+    height: 20px;
+    background-color: var(--third-color);
+    margin-left: 25px;
+    border-radius: 50%;
+    position: relative;
+    cursor: pointer;
+}
+.testimonial > div:first-of-type span:first-child{
+    background-color: var(--secondary-color);
+}
+.testimonial > div:first-of-type span:hover  {
+    background-color: var(--secondary-color);
+}
+.testimonial > div:first-of-type span::before{
+    content: "";
+    border: 4px solid var(--third-color);
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    border-radius: 50%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+.testimonial .testimonial-row {
+    padding: 175px 0px 0px;
+    display: flex;
+    position: relative;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    row-gap: 175px;
+}
+.testimonial .card {
+    display: flex;
+    flex-direction: row-reverse;
+}
+.testimonial .card::before {
+    content: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Natus, aliquam.";
+    position: absolute;
+    padding: 20px;
+    background-color: var(--secondary-color);
+    width: 175px;
+    color: #fff;
+    border-radius: 5px;
+    transform: translatey(-135px);
+}
+.testimonial .card::after {
+    content: "";
+    position: absolute;
+    background-color: transparent;
+    border: 15px solid;
+    border-color: var(--secondary-color) transparent transparent transparent;
+    transform: translate(-150px, -25px);
+}
+.testimonial .card div:first-child {
+    flex: 1;
+    padding-left: 20px;
+}
+.testimonial .card div:first-child h3{
+    margin: 0px;
+    padding: 10px 0px;
+}
+.testimonial .card div:first-child p{
+    margin: 0px;
+    padding: 5px;
+}
+.testimonial .card div:last-child {
+    height: 80px;
+    overflow: hidden;
+    border-radius: 50%;
+}
+.testimonial .card div:last-child img{
+    max-width: 100%;
+}
+/* End Testimonial Section */
+/* Start Footer */
+
+/* End Footer */
