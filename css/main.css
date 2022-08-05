@@ -1147,7 +1147,7 @@ section.about {
     position: relative;
     justify-content: space-around;
     flex-wrap: wrap;
-    row-gap: 175px;
+    row-gap: 140px;
 }
 .testimonial .card {
     display: flex;
@@ -1156,12 +1156,13 @@ section.about {
 .testimonial .card::before {
     content: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Natus, aliquam.";
     position: absolute;
-    padding: 20px;
+    padding: 13px;
     background-color: var(--secondary-color);
     width: 175px;
     color: #fff;
     border-radius: 5px;
-    transform: translatey(-135px);
+    transform: translatey(-110px);
+    font-size: 14px;
 }
 .testimonial .card::after {
     content: "";
