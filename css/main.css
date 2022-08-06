@@ -17,6 +17,7 @@ font-family: 'Montserrat', sans-serif;
     --secondary-color: #383741;
     --third-color: #a78a5a;
     --forth-color: #121215;
+    --main-transition: 0.3s;
 }
 /* End Variables */
 /* Start Global Rules */
@@ -30,6 +31,14 @@ html {
 }
 body {
     font-family: 'Roboto', sans-serif;
+}
+ul {
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+}
+a {
+    text-decoration: none;
 }
 /* End Global Rules */
 /* Start Media Screen */
@@ -68,6 +77,7 @@ header {
     top: 0px;
     z-index: 10;
     background-color: #fff;
+    box-shadow: 0px 2px 15px 0px #777;
 }
 header .logo {
     flex-basis: 285px;
@@ -178,7 +188,6 @@ header > div:last-of-type nav ul li:hover {
     cursor: pointer;
 }
 header > div:last-of-type nav a{
-    text-decoration: none;
     font-size: 22px;
     font-weight: 500;
     text-transform: capitalize;
@@ -316,11 +325,11 @@ header > div:last-of-type .burger {
     background-color: var(--main-color);
     font-weight: 800;
     border-radius: 5px;
-    transition: 250ms;
-    -webkit-transition: 250ms;
-    -moz-transition: 250ms;
-    -ms-transition: 250ms;
-    -o-transition: 250ms;
+    transition: var(--main-transition);
+    -webkit-transition: var(--main-transition);
+    -moz-transition: var(--main-transition);
+    -ms-transition: var(--main-transition);
+    -o-transition: var(--main-transition);
     display: flex;
 }
 .landing .button:hover {
@@ -329,14 +338,13 @@ header > div:last-of-type .burger {
 }
 .landing .button a {
     width: 100%;
-    text-decoration: none;
     color: var(--forth-color);
     padding: 20px;
-    transition: 0.3s;
-    -webkit-transition: 0.3s;
-    -moz-transition: 0.3s;
-    -ms-transition: 0.3s;
-    -o-transition: 0.3s;
+    transition: var(--main-transition);
+    -webkit-transition: var(--main-transition);
+    -moz-transition: var(--main-transition);
+    -ms-transition: var(--main-transition);
+    -o-transition: var(--main-transition);
 }
 .landing .button:hover a {
     color: #fff;
@@ -461,7 +469,6 @@ section.about {
 }
 .about .col-2 div a {
     color: var(--forth-color);
-    text-decoration: none;
     font-size: 20px;
     font-weight: 600;
 }
@@ -545,7 +552,6 @@ section.about {
 }
 .practice .col-1 > div a{
     color: initial;
-    text-decoration: none;
     font-size: 20px;
     font-weight: 600;
 }
@@ -944,7 +950,6 @@ section.about {
 .contact .container > div div a {
     width: 100%;
     color: initial;
-    text-decoration: none;
     font-size: 22px;
     font-weight: 600;
     padding: 15px;
@@ -1026,11 +1031,6 @@ section.about {
     -ms-transform: translateX(50%);
     -o-transform: translateX(50%);
 }
-@media (max-width: 767px) {
-    .attorneys .col div.row-1::before,
-    .attorneys .col div.row-1::after{
-    }
-}
 .attorneys .col div.row-2 {
     display: flex;
     justify-content: space-around;
@@ -1039,10 +1039,7 @@ section.about {
     height: 265px;
     overflow: hidden;
 }
-@media (max-width: 767px) {
-    .attorneys .col div.row-2 {
-    }
-}
+
 .attorneys .col div.row-2 .card{
     width: 21%;
     background-color: #fff;
@@ -1057,12 +1054,6 @@ section.about {
     }
     .attorneys .col div.row-2 .card:last-child {
     display: none;
-    }
-}
-.attorneys .col div.row-2 .card div {
-}
-@media (max-width: 767px) {
-    .attorneys .col div.row-2 .card div {
     }
 }
 .attorneys .col div.row-2 .card div img{
@@ -1194,5 +1185,240 @@ section.about {
 }
 /* End Testimonial Section */
 /* Start Footer */
+footer {
+    background-color: var(--secondary-color);
+    padding: 100px 0px 0px;
+    text-transform: capitalize;
+    color: #fff;
+}
+/* Start row-1 */
+footer .row-1 {
+    display: flex;
+    justify-content: space-between;
+}
+@media (max-width: 767px) {
+    footer .row-1 {
+        flex-wrap: wrap;
+    }
+}
+footer .row-1 div {
+    width: 30%;
+    padding: 20px 0px 20px 76px;
+    background-color: #414149;
+    border-radius: 5px;
+    position: relative;
+}
+@media (max-width: 767px) {
+    footer .row-1 div{
+        width: 100%;
+    }
+}
+footer .row-1 div h4 {
+    margin: 0px;
+    font-size: 23px;
+    letter-spacing: 0.5px;
+}
+footer .row-1 div p {
+    margin: 0px;
+    padding-top: 15px;
+}
+footer .row-1 div:nth-child(2) p {
+    text-transform: lowercase;
+}
+footer .row-1 div::before {
+    font-weight: 600;
+    font-family: "Font Awesome 6 Free";
+    position: absolute;
+    left: 0px;
+    top: 50%;
+    font-size: 30px;
+    color: var(--main-color);
+    transform: translate(25px,-50%);
+    -webkit-transform: translate(25px,-50%);
+    -moz-transform: translate(25px,-50%);
+    -ms-transform: translate(25px,-50%);
+    -o-transform: translate(25px,-50%);
+}
+footer .row-1 div:first-child::before {
+    content: "\f041";
 
+}
+footer .row-1 div:nth-child(2):before {
+    content: "\f2b6";
+}
+footer .row-1 div:last-child::before {
+    content: "\f095";
+}
+/* End row-1 */
+/* Start row-2 */
+footer .row-2 {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+@media (max-width: 767px) {
+    footer .row-2 {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+footer .row-2 > div {
+    width: 24%;
+}
+@media (max-width: 767px) {
+    footer .row-2 > div {
+        width: 100%;
+    }
+}
+footer .row-2 h3 {
+    margin: 0px;
+    font-size: 23px;
+    letter-spacing: 0.5px;
+    color: var(--third-color);
+    padding: 15px 0px 0px;
+}
+footer .row-2 p {
+    margin: 0px;
+    padding: 20px 0px 30px 0px;
+}
+footer .row-2 ul {
+    padding-top: 20px;
+}
+@media (max-width: 767px) {
+    footer .row-2 ul {
+        width: 90px;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: start;
+    }
+}
+footer .row-2 li:before {
+    content: "\f054";
+    font-weight: 600;
+    font-family: "Font Awesome 6 Free";
+    font-size: 14px;
+}
+footer .row-2 ul li:not(:first-child) {
+    padding-top: 5px;
+}
+footer .row-2 li a{
+    color: inherit;
+    padding-left: 10px;
+    transition: var(--main-transition);
+}
+footer .row-2 li a:hover{
+    color: var(--third-color);
+    padding-left: 15px;
+}
+/* Start col-1 */
+footer .row-2 .col-1 h2 {
+    margin: 0px;
+    font-size: 44px;
+    font-family: 'montserrat', sans-serif;
+    color: var(--third-color);
+    text-transform: uppercase;
+}
+footer .row-2 .col-1 p {
+    padding-bottom: 45px;
+}
+footer .row-2 .col-1 .social {
+    display: flex;
+    width: 175px;
+    justify-content: space-around;
+}
+@media (max-width: 767px) {
+    footer .row-2 .col-1 .social {
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+footer .row-2 .col-1 .social a {
+    display: grid;
+    width: 33px;
+    justify-items: center;
+    padding: 5px;
+    border: 1px solid #fff;
+    border-radius: 5px;
+    cursor: pointer;
+}
+footer .row-2 .col-1 .social a:hover ,
+footer .row-2 .col-1 .social a:hover > i {
+    color: var(--third-color);
+    border-color: var(--third-color);
+}
+footer .row-2 .col-1 .social a i {
+    font-size: 20px;
+}
+/* End col-1 */
+/* Start col-2 col-3 */
+footer .row-2 .col-2,
+footer .row-2 .col-3 {
+    padding-left: 20px;
+}
+@media (max-width: 767px) {
+    footer .row-2 .col-2,
+    footer .row-2 .col-3 {
+        padding: 30px 0px;
+    }
+}
+/* End col-2 col-3 */
+/* Start col-4 */
+footer .row-2 .col-4 form {
+    display: flex;
+    height: 50px;
+}
+@media (max-width: 767px) {
+    footer .row-2 .col-4 form {
+        max-width: 250px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+footer .row-2 .col-4 form > input {
+    width: 50%;
+}
+footer .row-2 .col-4 input[type="email"] {
+    padding: 15px;
+    border: none;
+    outline: none;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+footer .row-2 .col-4 input[type="submit"] {
+    padding: 10px;
+    border: none;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    color: #fff;
+    background-color: var(--third-color);
+    cursor: pointer;
+    text-transform: capitalize;
+}
+/* End col-4 */
+/* End row-2 */
+/* Start row-3 */
+footer .row-3 {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px 0px 20px;
+    background-color: #414149;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+@media (max-width: 767px) {
+    footer .row-3 {
+        flex-wrap: wrap;
+    }
+    footer .row-3 > div {
+        padding: 10px;
+    }
+}
+footer .row-3 a {
+    color: var(--third-color);
+}
+footer .row-3 span {
+    color: var(--main-color);
+}
+/* End row-3 */
 /* End Footer */
